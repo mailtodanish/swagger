@@ -1,0 +1,372 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Telerad Dashboard API",
+    "description": "",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://devteleraddashboard.azurewebsites.net"
+    }
+  ],
+  "paths": {
+    "/api/referral/physicians-study/aggr/": {
+      "get": {
+        "summary": "It will return count of study for physician -> facility -> modality.",
+        "tags": [
+          "Referral Patterns"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "from_date",
+            "schema": {
+              "type": "string",
+              "default": "2001-01-01"
+            },
+            "required": true,
+            "description": "from date"
+          },
+          {
+            "in": "query",
+            "name": "to_date",
+            "schema": {
+              "type": "string",
+              "default": "2023-01-01"
+            },
+            "required": true,
+            "description": "to date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "json"
+          }
+        }
+      }
+    },
+    "/api/utilization/rates/procedures/chart": {
+      "get": {
+        "summary": "utilization rate procedure chart.",
+        "tags": [
+          "Utilization"
+        ],
+        "responses": {
+          "200": {
+            "description": "json"
+          }
+        }
+      }
+    },
+    "/api/utilization/rates/procedure/": {
+      "get": {
+        "summary": "utilization rate procedure.",
+        "tags": [
+          "Utilization"
+        ],
+        "responses": {
+          "200": {
+            "description": "json"
+          }
+        }
+      }
+    },
+    "/api/utilization/rates/study/chart": {
+      "get": {
+        "summary": "utilization rate study chart.",
+        "tags": [
+          "Utilization"
+        ],
+        "responses": {
+          "200": {
+            "description": "json"
+          }
+        }
+      }
+    },
+    "/api/utilization/rates/study/": {
+      "get": {
+        "summary": "utilization rate study.",
+        "tags": [
+          "Utilization"
+        ],
+        "responses": {
+          "200": {
+            "description": "json"
+          }
+        }
+      }
+    },
+    "/api/referral/facility-study-chart/aggr/": {
+      "get": {
+        "summary": "It will return date_histogram for facility referral.",
+        "tags": [
+          "Referral Patterns"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "from_date",
+            "schema": {
+              "type": "string",
+              "default": "2001-01-01"
+            },
+            "required": true,
+            "description": "from date"
+          },
+          {
+            "in": "query",
+            "name": "to_date",
+            "schema": {
+              "type": "string",
+              "default": "2023-01-01"
+            },
+            "required": true,
+            "description": "to date"
+          },
+          {
+            "in": "query",
+            "name": "modality",
+            "schema": {
+              "type": "string",
+              "default": "DX"
+            },
+            "required": false,
+            "description": "modality"
+          },
+          {
+            "in": "query",
+            "name": "facility_name",
+            "schema": {
+              "type": "string",
+              "default": "AlemHealth Singapore"
+            },
+            "required": false,
+            "description": "facility_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "json"
+          }
+        }
+      }
+    },
+    "/api/referral/facility-study-urgent/aggr/": {
+      "get": {
+        "summary": "It will return the number of documents for each facility and priority combination.",
+        "tags": [
+          "Referral Patterns"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "from_date",
+            "schema": {
+              "type": "string",
+              "default": "2001-01-01"
+            },
+            "required": true,
+            "description": "from date"
+          },
+          {
+            "in": "query",
+            "name": "to_date",
+            "schema": {
+              "type": "string",
+              "default": "2023-01-01"
+            },
+            "required": true,
+            "description": "to date"
+          },
+          {
+            "in": "query",
+            "name": "modality",
+            "schema": {
+              "type": "string",
+              "default": "DX"
+            },
+            "required": false,
+            "description": "modality"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "json"
+          }
+        }
+      }
+    },
+    "/api/referral/physicians-study-chart/aggr/": {
+      "get": {
+        "summary": "It will return date_histogram for referrer.",
+        "tags": [
+          "Referral Patterns"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "from_date",
+            "schema": {
+              "type": "string",
+              "default": "2001-01-01"
+            },
+            "required": true,
+            "description": "from date"
+          },
+          {
+            "in": "query",
+            "name": "to_date",
+            "schema": {
+              "type": "string",
+              "default": "2023-01-01"
+            },
+            "required": true,
+            "description": "to date"
+          },
+          {
+            "in": "query",
+            "name": "modality",
+            "schema": {
+              "type": "string",
+              "default": "DX"
+            },
+            "required": false,
+            "description": "modality"
+          },
+          {
+            "in": "query",
+            "name": "referrer_name",
+            "schema": {
+              "type": "string",
+              "default": "Aayush Kumar"
+            },
+            "required": false,
+            "description": "referrer_name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "json"
+          }
+        }
+      }
+    },
+    "/api/referral/physicians-study-urgent/aggr/": {
+      "get": {
+        "summary": "It will return the number of documents for each physician and priority combination.",
+        "tags": [
+          "Referral Patterns"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "from_date",
+            "schema": {
+              "type": "string",
+              "default": "2001-01-01"
+            },
+            "required": true,
+            "description": "from date"
+          },
+          {
+            "in": "query",
+            "name": "to_date",
+            "schema": {
+              "type": "string",
+              "default": "2023-01-01"
+            },
+            "required": true,
+            "description": "to date"
+          },
+          {
+            "in": "query",
+            "name": "modality",
+            "schema": {
+              "type": "string",
+              "default": "DX"
+            },
+            "required": false,
+            "description": "modality"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "json"
+          }
+        }
+      }
+    },
+    "/active-studies": {
+      "get": {
+        "summary": "Active Studies",
+        "description": "Active Studies",
+        "operationId": "active-studies",
+        "responses": {
+          "200": {
+            "description": "null"
+          }
+        }
+      }
+    },
+    "/study-details": {
+      "get": {
+        "summary": "Study details",
+        "description": "Study details",
+        "operationId": "5f11b6c1139c371a687b1d5e",
+        "responses": {
+          "200": {
+            "description": "null"
+          }
+        }
+      }
+    },
+    "/signed-reports": {
+      "get": {
+        "summary": "Signed Reports",
+        "description": "Signed Reports",
+        "operationId": "signed-reports",
+        "responses": {
+          "200": {
+            "description": "null"
+          }
+        }
+      }
+    },
+    "/study-counts-per-facility": {
+      "get": {
+        "summary": "All study counts",
+        "description": "All study counts",
+        "operationId": "all-study-counts",
+        "responses": {
+          "200": {
+            "description": "null"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "apiKeyHeader": {
+        "type": "apiKey",
+        "name": "Ocp-Apim-Subscription-Key",
+        "in": "header"
+      },
+      "apiKeyQuery": {
+        "type": "apiKey",
+        "name": "subscription-key",
+        "in": "query"
+      }
+    }
+  },
+  "security": [
+    {
+      "apiKeyHeader": []
+    },
+    {
+      "apiKeyQuery": []
+    }
+  ]
+}
